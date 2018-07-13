@@ -1,0 +1,69 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mensa",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "meals",
+          "slots": [
+            {
+              "name": "mensa",
+              "type": "standort"
+            },
+            {
+              "name": "datum",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "was gibt es am {datum} im {mensa}",
+            "was gibt es am {datum} in der {mensa}",
+            "Was gibt es {datum} in der {mensa}",
+            "Was gibt es im {mensa} zu essen",
+            "Was gibt es heute im {mensa}",
+            "Welche Gerichte gibt es im {mensa}",
+            "Was gibt es heute in der {mensa} zu essen",
+            "Was gibt es heute in der {mensa} "
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "226",
+              "name": {
+                "value": "Mensa am Aasee"
+              }
+            },
+            {
+              "id": "331",
+              "name": {
+                "value": "Bistro Oeconomicum"
+              }
+            },
+            {
+              "id": "225",
+              "name": {
+                "value": "Mensa am Ring"
+              }
+            }
+          ],
+          "name": "standort"
+        }
+      ]
+    }
+  }
+}
