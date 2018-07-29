@@ -1,8 +1,9 @@
 {
-  "name": "alexa-skill-kit-sdk-factskill",
+  "name": "mensa-muenster-skill",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "alexa-sdk": "^1.0.25"
+    "alexa-sdk": "^1.0.25",
+    "node-fetch": "^2.2.0"
   }
 }
