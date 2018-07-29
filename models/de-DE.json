@@ -16,11 +16,16 @@
           "samples": []
         },
         {
-          "name": "meals",
+          "name": "mealsIntent",
           "slots": [
             {
               "name": "mensa",
-              "type": "standort"
+              "type": "standort",
+              "samples": [
+                "im {mensa}",
+                "in der {mensa}",
+                "{mensa}"
+              ]
             },
             {
               "name": "datum",
@@ -28,6 +33,7 @@
             }
           ],
           "samples": [
+            "was gibt es in der mensa",
             "was gibt es am {datum} im {mensa}",
             "was gibt es am {datum} in der {mensa}",
             "Was gibt es {datum} in der {mensa}",
@@ -41,6 +47,7 @@
       ],
       "types": [
         {
+          "name": "standort",
           "values": [
             {
               "id": "226",
@@ -51,7 +58,10 @@
             {
               "id": "331",
               "name": {
-                "value": "Bistro Oeconomicum"
+                "value": "Bistro Oeconomicum",
+                "synonyms": [
+                  "Oeconomicum"
+                ]
               }
             },
             {
@@ -60,10 +70,55 @@
                 "value": "Mensa am Ring"
               }
             }
-          ],
-          "name": "standort"
+          ]
         }
       ]
-    }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "mealsIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "mensa",
+              "type": "standort",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.231646355236.1303880439984"
+              }
+            },
+            {
+              "name": "datum",
+              "type": "AMAZON.DATE",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.231646355236.1303880439984",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Welche Mensa meinst du?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Wo möchtest du essen?"
+          },
+          {
+            "type": "PlainText",
+            "value": "In welche Mensa möchtest du gehen?"
+          }
+        ]
+      }
+    ]
   }
 }
