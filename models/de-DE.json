@@ -56,6 +56,30 @@
               }
             },
             {
+              "id": "225",
+              "name": {
+                "value": "Mensa am Ring"
+              }
+            },
+            {
+              "id": "233",
+              "name": {
+                "value": "Mensa Bispinghof"
+              }
+            },
+            {
+              "id": "228",
+              "name": {
+                "value": "Mensa da Vinci"
+              }
+            },
+            {
+              "id": "332",
+              "name": {
+                "value": "Mensa Steinfurt"
+              }
+            },
+            {
               "id": "331",
               "name": {
                 "value": "Bistro Oeconomicum",
@@ -65,9 +89,50 @@
               }
             },
             {
-              "id": "225",
+              "id": "329",
               "name": {
-                "value": "Mensa am Ring"
+                "value": "Bistro KaBu",
+                "synonyms": [
+                  "KaBu"
+                ]
+              }
+            },
+            {
+              "id": "227",
+              "name": {
+                "value": "Bistro Denkpause",
+                "synonyms": [
+                  "Denkpause"
+                ]
+              }
+            },
+            {
+              "id": "327",
+              "name": {
+                "value": "Bistro Frieden",
+                "synonyms": [
+                  "Frieden",
+                  "Friedensbistro"
+                ]
+              }
+            },
+            {
+              "id": "328",
+              "name": {
+                "value": "Bistro Hüfferstift",
+                "synonyms": [
+                  "Hüfferstift"
+                ]
+              }
+            },
+            {
+              "id": "330",
+              "name": {
+                "value": "Bistro Katholische Hochschule",
+                "synonyms": [
+                  "Bistro Katho",
+                  "Katho Bistro"
+                ]
               }
             }
           ]
