@@ -55,7 +55,14 @@
                 "value": "Mensa am Aasee",
                 "synonyms": [
                   "Aaseemensa",
-                  "Aasee mensa"
+                  "Aasee mensa",
+                  "Ahsee mensa",
+                  "Ah See Mensa",
+                  "Mensa am Ah See",
+                  "Mensa am Ahsee",
+                  "Aasee",
+                  "Ah see",
+                  "Ahsee"
                 ]
               }
             },
@@ -65,7 +72,8 @@
                 "value": "Mensa am Ring",
                 "synonyms": [
                   "Ringmensa",
-                  "Ring Mensa"
+                  "Ring Mensa",
+                  "Ring"
                 ]
               }
             },
@@ -74,14 +82,19 @@
               "name": {
                 "value": "Mensa Bispinghof",
                 "synonyms": [
-                  "Bispinghof Mensa"
+                  "Bispinghof Mensa",
+                  "Bispinghof"
                 ]
               }
             },
             {
               "id": "228",
               "name": {
-                "value": "Mensa da Vinci"
+                "value": "Mensa da Vinci",
+                "synonyms": [
+                  "da vinschi",
+                  "da winschie"
+                ]
               }
             },
             {
@@ -90,7 +103,8 @@
                 "value": "Mensa Steinfurt",
                 "synonyms": [
                   "Steinfurt Mensa",
-                  "Steinfurter Mensa"
+                  "Steinfurter Mensa",
+                  "Steinfurt"
                 ]
               }
             },
@@ -99,7 +113,9 @@
               "name": {
                 "value": "Bistro Oeconomicum",
                 "synonyms": [
-                  "Oeconomicum"
+                  "Oeconomicum",
+                  "Öko",
+                  "Ökonomikum"
                 ]
               }
             },
@@ -108,7 +124,9 @@
               "name": {
                 "value": "Bistro KaBu",
                 "synonyms": [
-                  "KaBu"
+                  "KaBu",
+                  "Kahbu",
+                  "Kah bu"
                 ]
               }
             },
