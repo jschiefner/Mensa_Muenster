@@ -52,19 +52,30 @@
             {
               "id": "226",
               "name": {
-                "value": "Mensa am Aasee"
+                "value": "Mensa am Aasee",
+                "synonyms": [
+                  "Aaseemensa",
+                  "Aasee mensa"
+                ]
               }
             },
             {
               "id": "225",
               "name": {
-                "value": "Mensa am Ring"
+                "value": "Mensa am Ring",
+                "synonyms": [
+                  "Ringmensa",
+                  "Ring Mensa"
+                ]
               }
             },
             {
               "id": "233",
               "name": {
-                "value": "Mensa Bispinghof"
+                "value": "Mensa Bispinghof",
+                "synonyms": [
+                  "Bispinghof Mensa"
+                ]
               }
             },
             {
@@ -76,7 +87,11 @@
             {
               "id": "332",
               "name": {
-                "value": "Mensa Steinfurt"
+                "value": "Mensa Steinfurt",
+                "synonyms": [
+                  "Steinfurt Mensa",
+                  "Steinfurter Mensa"
+                ]
               }
             },
             {
