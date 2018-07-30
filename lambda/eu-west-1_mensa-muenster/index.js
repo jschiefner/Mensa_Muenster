@@ -25,7 +25,7 @@ const handlers = {
     } else {
       const name = this.event.request.intent.slots.mensa.resolutions.resolutionsPerAuthority[0].values[0].value.name;
       const id = this.event.request.intent.slots.mensa.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-      const date = this.event.request.intent.slots.datum.value;
+      const date = getCorrectDate(this.event.request.intent.slots.datum.value);
       const url = openMensaURL(id, date);
       fetch(url)
         .then(res => res.json())
@@ -33,8 +33,8 @@ const handlers = {
           this.emit(':tell', `in der ${name} gibt es als erstes gericht ${gerichte[0].name}`);
         })
         .catch((err) => {
-          // date not defined here, only definde openMensaURL when mensa is closed today
-          this.emit(':ask', `Am <say as interpret-as="date">${date.replace(/-/g, '')}</say as> ist diese Mensa anscheinend geschlossen.`, 'Möchtest du einen anderen Tag wissen?');
+          // in case the request returned 404 (mensa is closed on the requested day)
+          this.emit(':ask', `Am <say-as interpret-as="date" format="md">${speechFormatDate(date)}</say-as> ist diese Mensa anscheinend geschlossen.`, 'Möchtest du einen anderen Tag wissen?');
         });
     }
   },
@@ -59,10 +59,22 @@ const handlers = {
 };
 
 // helper functions
-function openMensaURL(id, date) {
+function getCorrectDate(date) {
   if (date == undefined) {
-    date = new Date().toISOString().split('T')[0]; // get current Date formatted as yyyy-mm-dd
+    return new Date().toISOString().split('T')[0]; // get current Date formatted as yyyy-mm-dd
+  } else {
+    return date;
   }
+}
+
+// input: yyyy-mm-dd
+// output: mmdd
+function speechFormatDate(date) {
+  let pieces = date.split('-');
+  return `${pieces[1]}/${pieces[2]}`;
+}
+
+function openMensaURL(id, date) {
   return `http://openmensa.org/api/v2/canteens/${id}/days/${date}/meals`;
 }
 
