@@ -5,15 +5,25 @@
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
-          "samples": []
+          "samples": [
+            "Danke",
+            "Alles klar",
+            "Vielen Dank"
+          ]
         },
         {
           "name": "AMAZON.HelpIntent",
-          "samples": []
+          "samples": [
+            "Was kann ich dich fragen",
+            "Was kannst du"
+          ]
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": []
+          "samples": [
+            "es reicht",
+            "reicht"
+          ]
         },
         {
           "name": "mealsIntent",
@@ -24,6 +34,7 @@
               "samples": [
                 "im {mensa}",
                 "in der {mensa}",
+                "am {mensa}",
                 "{mensa}"
               ]
             },
@@ -33,15 +44,20 @@
             }
           ],
           "samples": [
-            "was gibt es in der mensa",
-            "was gibt es am {datum} im {mensa}",
             "was gibt es am {datum} in der {mensa}",
+            "was gibt es am {datum} im {mensa}",
             "Was gibt es {datum} in der {mensa}",
+            "Was gibt es {datum} im {mensa}",
+            "Was gibt es in der {mensa} zu essen",
             "Was gibt es im {mensa} zu essen",
-            "Was gibt es heute im {mensa}",
+            "Welche Gerichte gibt es in der {mensa}",
             "Welche Gerichte gibt es im {mensa}",
-            "Was gibt es heute in der {mensa} zu essen",
-            "Was gibt es heute in der {mensa} "
+            "Was es {datum} in der {mensa} gibt",
+            "was es {datum} im {mensa} gibt",
+            "was es am {datum} in der {mensa} gibt",
+            "was es am {datum} im {mensa} gibt",
+            "was gibt es am {datum}",
+            "was gibt es {datum}"
           ]
         }
       ],
