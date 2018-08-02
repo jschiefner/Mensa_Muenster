@@ -44,7 +44,12 @@ const handlers = {
         .then(res => res.json())
         .then((gerichte) => {
           // if all went right, we read the menu
-          this.emit(':tell', `Am <say-as interpret-as="date" format="md">${speechFormatDate(date)}</say-as> gibt es ${article} ${name} ${getGerichteString(gerichte)}`);
+          const speechOutput = `Am <say-as interpret-as="date" format="md">${speechFormatDate(date)}</say-as> gibt es ${article} ${name} ${getGerichteString(gerichte)}`;
+          const cardTitle = name;
+          const cardContent = speechOutput;
+
+          this.emit(':tellWithCard', speechOutput, cardTitle, cardContent, imageObj);
+          // this.emit(':tell', `Am <say-as interpret-as="date" format="md">${speechFormatDate(date)}</say-as> gibt es ${article} ${name} ${getGerichteString(gerichte)}`);
         }).catch((err) => {
           // in case the request returned 404 (mensa is closed on the requested day)
           this.emit(':ask', `Am <say-as interpret-as="date" format="md">${speechFormatDate(date)}</say-as> ist diese Mensa anscheinend geschlossen.`, 'Möchtest du einen anderen Tag wissen?');
