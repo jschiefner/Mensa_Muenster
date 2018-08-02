@@ -10,6 +10,8 @@ const APP_ID = 'amzn1.ask.skill.916c2631-2b86-4136-87f2-a7a4881fb5f4';
 // constant messages and prompts
 const SKILL_NAME = 'Mensa Münster';
 const HELP_MESSAGE = 'Du kannst mich zum Beispiel fragen: Was gibt es in der Mensa am Ring?';
+const MISSUNDERSTOOD_MESSAGE = 'Das habe ich nicht verstanden';
+const REPROMPT_MESSAGE = 'Kannst du das wiederholen?';
 const HELP_REPROMPT = 'Wo möchtest du heute Essen?';
 const STOP_MESSAGE = 'Guten Appetit!';
 
@@ -51,21 +53,15 @@ const handlers = {
   },
 
   'AMAZON.HelpIntent': function () {
-    const speechOutput = HELP_MESSAGE;
-    const reprompt = HELP_REPROMPT;
-
-    this.response.speak(speechOutput).listen(reprompt);
-    this.emit(':responseReady');
+    this.emit(':ask', HELP_MESSAGE, HELP_REPROMPT);
   },
 
   'AMAZON.CancelIntent': function () {
-    this.response.speak(STOP_MESSAGE);
-    this.emit(':responseReady');
+    this.emit(':tell', STOP_MESSAGE);
   },
 
   'AMAZON.StopIntent': function () {
-    this.response.speak(STOP_MESSAGE);
-    this.emit(':responseReady');
+    this.emit(':tell', STOP_MESSAGE);
   },
 };
 
