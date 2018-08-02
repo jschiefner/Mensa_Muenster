@@ -23,16 +23,27 @@ const handlers = {
     if (this.event.request.dialogState != 'COMPLETED') {
       this.emit(':delegate');
     } else {
-      const name = this.event.request.intent.slots.mensa.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-      const id = this.event.request.intent.slots.mensa.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+      const resolutions = this.event.request.intent.slots.mensa.resolutions.resolutionsPerAuthority[0];
+
+      // if there are no proper values yet, make the user repeat
+      if (resolutions.values == undefined) {
+        this.emit(':ask', 'das habe ich nicht verstanden', 'kannst du das wiederholen?');
+      }
+
+      // gather request info (if a correct mensa was identified)
+      const name = resolutions.values[0].value.name;
+      const id = resolutions.values[0].value.id;
       const date = getCorrectDate(this.event.request.intent.slots.datum.value);
       const url = openMensaURL(id, date);
+      const article = getMensaType(name); // 'in der' Mensa or 'im' Bistro
+
+      // fetch relevant data and answer
       fetch(url)
         .then(res => res.json())
         .then((gerichte) => {
-          this.emit(':tell', `in der ${name} gibt es als erstes gericht ${gerichte[0].name}`);
-        })
-        .catch((err) => {
+          // if all went right, we read the menu
+          this.emit(':tell', `Am <say-as interpret-as="date" format="md">${speechFormatDate(date)}</say-as> gibt es ${article} ${name} ${getGerichteString(gerichte)}`);
+        }).catch((err) => {
           // in case the request returned 404 (mensa is closed on the requested day)
           this.emit(':ask', `Am <say-as interpret-as="date" format="md">${speechFormatDate(date)}</say-as> ist diese Mensa anscheinend geschlossen.`, 'Möchtest du einen anderen Tag wissen?');
         });
@@ -65,6 +76,15 @@ function getCorrectDate(date) {
   } else {
     return date;
   }
+}
+
+function getMensaType(name) {
+  return name.toLowerCase().startsWith('mensa') ? 'in der' : 'im';
+}
+
+function getGerichteString(gerichte) {
+  const namen = gerichte.map(g => g.name);
+  return [namen.slice(0, -1).join(', <break time="0.2s"/>'), namen.slice(-1)[0]].join(namen.length < 2 ? '' : ' <break time="0.2s"/> und ');
 }
 
 // input: yyyy-mm-dd
