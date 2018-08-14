@@ -32,7 +32,7 @@ const handlers = {
 
       // if there are no proper values yet, make the user repeat
       if (resolutions.values == undefined) {
-        this.emit(':ask', 'das habe ich nicht verstanden', 'kannst du das wiederholen?');
+        this.emit(':ask', MISSUNDERSTOOD_MESSAGE, REPROMPT_MESSAGE);
       }
 
       // gather request info (if a correct mensa was identified)
