@@ -1,3 +1,5 @@
-lambda/eu-west-1_mensa-muenster/node_modules/
+lambda/*/asktemp*
+lambda/*/node_modules/
+lambda/*/.env
 examples
 .ask/*
