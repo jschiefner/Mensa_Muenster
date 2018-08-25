@@ -2,6 +2,8 @@
 
 Alexa Skill that reads you the meals from every student canteen in Münster.
 
+You can install the Skill from its Amazon [Store Page](https://www.amazon.de/Zweitag-Mensa-M%C3%BCnster/dp/B07GRWTVXV/)
+
 ### Mensa API
 
 The Data is provided by [OpenMensa](http://doc.openmensa.org/api/v2/). Knowing this, you can easily modify this Skill to make it work with any student canteen in Germany that is supported by Openmensa.
