@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "mensa",
+      "invocationName": "mensa münster",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -57,7 +57,11 @@
             "was es am {datum} in der {mensa} gibt",
             "was es am {datum} im {mensa} gibt",
             "was gibt es am {datum}",
-            "was gibt es {datum}"
+            "was gibt es {datum}",
+            "in der {mensa}",
+            "im {mensa}",
+            "am {datum} in der {mensa}",
+            "am {datum} im {mensa}"
           ]
         }
       ],

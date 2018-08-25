@@ -21,7 +21,7 @@ const MONTHS = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'A
 // Intent Handlers
 const handlers = {
   'LaunchRequest': function () {
-    this.emit(':ask', `<audio src="${process.env.CRUNCH_SOUND}" />`, HELP_MESSAGE);
+    this.emit(':ask', 'Wo möchtest du essen?', HELP_MESSAGE);
   },
 
   'mealsIntent': function () {
